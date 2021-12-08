@@ -1,5 +1,5 @@
 defmodule Day1 do
-  def input() do
+  def parse_input() do
     File.read!("input.txt")
     |> String.split("\n", trim: true)
     |> Enum.map(&String.to_integer/1)
@@ -13,7 +13,7 @@ defmodule Day1 do
   end
 
   def day1_aux([], _prev, output) do
-    output |> IO.inspect()
+    output
   end
 
   def day1_aux([hd | tail], prev, output) do
@@ -28,4 +28,4 @@ defmodule Day1 do
 end
 
 IO.puts(Day1.day1([199, 200, 208, 210, 200, 207, 240, 269, 260, 263]))
-IO.puts(Day1.input())
+IO.puts(Day1.parse_input())

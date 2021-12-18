@@ -41,8 +41,8 @@ defmodule Day4 do
         new_acc = iterate_boards(draw_num, boards, acc)
 
         case new_acc do
-          {{a, :bingo, b, c}, lst} -> {:halt, {{a, :bingo, b, c}, lst}}
-          {{a, :not_bingo, b, c}, lst} -> {:cont, {{a, :not_bingo, b, c}, lst}}
+          {{_, :bingo, _, _}, _} -> {:halt, new_acc}
+          _ -> {:cont, new_acc}
         end
       end)
 
